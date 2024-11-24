@@ -3,63 +3,32 @@
 //9/23/24
 
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
 #include <cmath>
 #include <iomanip>
 
-
-
-
 using namespace std;
-int main()
-{
 
-  const int ARRAY_SIZE = 25;
-   	double alpha[ARRAY_SIZE];
-  
+int main() {
+    const int ARRAY_SIZE = 50;
+    double alpha[ARRAY_SIZE];
 
-int i = 0;
+    // First 25
+    for (int i = 0; i < 25; i++) {
+        alpha[i] = pow(i, 2);
+    }
 
-for (i = 0; i <= 26; i++)
-{
-cout << i << " "; 
-i = pow(i,2);
+    // Last 25
+    for (int i = 25; i < ARRAY_SIZE; i++) {
+        alpha[i] = 3 * i;
+    }
 
-cout<<i<<endl;
-cout<<alpha[i];
- //Line 1
-//process list[i] //Line 2}
-
-
-}
-
-
-
-    
-
-
-
-
-
-
-cout <<alpha<< endl;
-
-
-
-
- 
-    
-    
-
-
-
-
-
-
-
-
-
+    // Print the array, 10 elements per line
+    for (int i = 0; i < ARRAY_SIZE; i++) {
+        cout << fixed << setprecision(2) << alpha[i] << " ";
+        if (i % 10 == 9) {
+            cout << endl;
+        }
+    }
 
     return 0;
 }
